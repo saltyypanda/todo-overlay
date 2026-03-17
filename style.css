@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+body {
+  -webkit-app-region: drag;
+}
+
+.window {
+  background: rgba(27, 27, 27, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  font-family: sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}

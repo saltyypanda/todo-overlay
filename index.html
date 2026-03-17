@@ -1,39 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<style>
-body {
-  background: transparent;
-  color: white;
-  font-family: sans-serif;
-  -webkit-app-region: drag;
-}
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-.todo {
-  backdrop-filter: blur(10px);
-  background: rgba(30,30,30,0.35);
-  padding: 20px;
-  border-radius: 12px;
-}
+  <body>
+    <div class="window">
+      <h2 class="text-2xl font-bold pb-4">Today's Tasks</h2>
 
-li {
-  margin: 8px 0;
-}
-</style>
-</head>
+      <div class="flex gap-2 mb-4">
+        <input
+          id="task-input"
+          type="text"
+          placeholder="New task..."
+          class="input input-bordered input-sm flex-1 no-drag"
+        />
 
-<body>
+        <button id="add-task" class="btn btn-primary btn-sm no-drag">
+          Add
+        </button>
+      </div>
 
-<div class="todo">
-<h2>Tasks</h2>
+      <ul id="task-list"></ul>
 
-<ul contenteditable="true">
-<li>Finish AWS project</li>
-<li>Walk Orla</li>
-<li>Buy Ivan watch</li>
-</ul>
-
-</div>
-
-</body>
+      <ul id="task-list" contenteditable="true"></ul>
+      <script src="tasks.js"></script>
+    </div>
+  </body>
 </html>

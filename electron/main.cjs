@@ -1,22 +1,24 @@
+const path = require("path");
 const { app, BrowserWindow } = require("electron");
 
-require("electron-reload")(__dirname);
+require("electron-reload")(path.join(__dirname, ".."));
 
 function createWindow() {
   const win = new BrowserWindow({
     width: 350,
-    height: 800,
+    height: 650,
     transparent: true,
     frame: false,
     alwaysOnTop: true,
     resizable: false,
     hasShadow: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   });
 
-  win.loadFile("index.html");
+  win.loadFile(path.join(__dirname, "..", "index.html"));
 }
 
 app.whenReady().then(createWindow);
